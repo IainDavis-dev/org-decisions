@@ -1,0 +1,60 @@
+---
+title: Standard Format for Post-Delivery Estimate Reflections
+status: accepted
+date: 2025-06-10
+tags: [process, tracking]
+---
+
+# 000002 - Standard Format for Post-Delivery Estimate Reflections
+
+## Context
+
+As part of our ongoing practice improvement and estimation accuracy feedback, we’ve introduced a lightweight reflection process for completed issues. These reflections allow us to assess the quality of our point estimates, record observed deviations, and optionally recalibrate expectations for future planning.
+
+They also enable structured extraction of estimation trends over time, especially for solo or small-team environments where implicit retrospectives can go unrecorded.
+
+## Decision
+
+We will standardize a comment format—submitted by Nova—on all completed stories with meaningful execution effort. This format is designed for both human clarity and future machine parsing.
+
+The format includes fields for:
+- Original estimate
+- Actual time spent
+- Revised estimate (if re-pointed)
+- Explanation for discrepancies
+- Assessment of scope stability
+- Confidence score with brief rationale
+
+```text
+Post-Delivery Estimate Reflection (submitted by Nova):
+
+Story Points Assigned: [original estimate]
+Actual Time Spent: [duration or coarse-grain]
+Revised Estimate (if re-pointed): [updated point value]
+
+Reason for Deviation:
+[brief description of why actual effort differed from estimate]
+
+Scope Stability:
+[brief note on whether the scope changed during execution]
+
+Confidence in Original Estimate:
+[rating out of 5] — [optional one-line rationale]
+```
+
+## Alternatives Considered
+
+- **[FORMAT] Informal freeform notes**  
+  *Rejected.* Freeform writing is valuable for discovery but reduces consistency and makes analysis difficult.
+
+- **[FORMAT] Pure quantitative model (e.g., confidence = 80%)**  
+  *Rejected.* Over-quantifying confidence loses nuance and creates a false sense of precision.
+
+- **[AUTOMATION] Rely on velocity trends only**  
+  *Rejected.* Team velocity masks individual drift and doesn't highlight the why behind variances.
+
+## Consequences
+
+### Positive
+- Enables a lightweight form of estimation retro with negligible overhead
+- Provides structured
